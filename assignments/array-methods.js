@@ -93,8 +93,19 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: need to send a mass email to everyone involved. Make sure to pull out everyones email, so it can be sent all at once. 
+let allEmails = [];
+runners.forEach(mail => allEmails.push(`${mail.email}`));
+console.log(allEmails);
 
-// Problem 2
+// Problem 2 what is the average donation?
+  let cash = runners.reduce((total, tickets) => {
+      return total += tickets.donation;
+  }, 0);
+console.log(cash/runners.length);
 
-// Problem 3
+// Problem 3 Filter Out anyone who gave over $150 in donations, so we can send a thank you card.
+  const bigDonors = runners.filter(item => {
+    return item.donation >= 150;
+  });
+console.log(bigDonors);
