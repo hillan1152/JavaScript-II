@@ -3,7 +3,21 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function football(league) {
+  const offense = "Pro-Style";
+  const defense = "3-4";
+  console.log(`Many teams in the NFL run the ${offense} type of offense and the ${defense} defense`);
 
+  function team (teamName) {
+    const players = 53;
+    console.log(`Each team can man a roster of ${players} players`);
+
+    function position(positions) {
+      const mostImportant = "QB"
+      console.log(`${mostImportant} is the most important position on the field. Out of ${players} players, he is needed more than anyone in the ${offense} offense`)
+    }
+  }
+}
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
